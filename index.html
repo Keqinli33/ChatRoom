@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CHAT ROOM</title>
+		<script src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src= "http://code.jquery.com/jquery-1.11.1.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+	
+	</head>
+	
+	<body>
+		<!--<div id="login_div">
+			<h1> Login to Chat Room</h1>
+			<input type="text" class="user_name" placeholder="Enter a name">
+			<input type="button" class="login_status" onclick="submitname()">
+		</div>
+		-->
+		<div class="chat_m" >
+
+		</div>
+		<div id="test"></div>
+			<div id="chat_div">
+
+				<input type="text" class="post_m" placeholder="Input here" />
+
+			</div>
+		<div>
+			<button  id="postMsg">
+				send
+			</button>
+
+
+		</div>
+	</body>
+	<script>
+
+
+        nickname = prompt("Input your user name");
+        var socket = io();
+        socket.emit("join", nickname);
+        //var socket = io();
+		/*$(".login_status").submitname(function(){
+		 var name=$(".user_name").val();
+		 socket.emit("join",name);
+		 });*/
+
+        $("button").click(function(){  //e?
+            var dialog = $(".post_m").val();
+            var time = new Date().toLocaleString();
+            var message = dialog + "   " + time;
+            //console.log(message);
+            socket.emit("messages", message);
+            $('.post_m').val("");
+        });
+        //server.on("connect", function(data){
+        <!--$("#status").html("Connected to chatter");-->
+
+
+
+        //});
+        socket.on("messages", function(data){
+            //insertMessage(data)///complete this part
+            //data.forEach(function(message){
+            //message = JSON.parse(data);
+            $(".chat_m").append(data+"<br>");
+            //	});
+        });
+
+		function custom_close(){
+		 window.opener=null;
+		 window.open('','_self');
+		 window.close();
+		 }
+
+        var time = new Date().toLocaleString();
+
+	</script>
+
+</html>

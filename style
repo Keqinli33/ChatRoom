@@ -1,0 +1,71 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 25px;
+  width: 500px;
+}
+
+h1 {
+  color: blue;
+}
+
+#indexBody {
+  background-color: white;
+  width: 480px;
+}
+
+#nameInput {
+  font-size: large;
+  color: orange;
+  width: 10em;
+  height: 2.4em;
+  position: relative;
+  left: 50px;
+  border-radius: 25px;
+  border: inset;
+}
+
+#nameButton {
+  background-color: orange;
+  color: white;
+  font-size: larger;
+  width: 10em;
+  height: 3em;
+  position: absolute;
+  left: 330px;
+  border-radius: 10px;
+  border: inherit;
+}
+
+
+
+#userName {
+  color: black;
+  font-size: 30px;
+}
+
+
+#m {
+  font-size: large;
+  color: orange;
+  width: 14em;
+  height: 2.4em;
+  position: relative;
+  left: 10px;
+  border-radius: 25px;
+  border: inset;
+}
+
+#postMsg {
+  background-color: blue;
+  color: white;
+  font-size: larger;
+  width: 5em;
+  height: 3em;
+  position: absolute;
+  left: 350px;
+  border-radius: 10px;
+  border: inherit;
+}
+
+
